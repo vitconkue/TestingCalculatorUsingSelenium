@@ -20,4 +20,11 @@
         </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="TestCases.json" />
+      <Resource Include="TestCases.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+    </ItemGroup>
+
 </Project>

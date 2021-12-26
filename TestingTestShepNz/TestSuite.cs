@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
@@ -44,13 +46,7 @@ namespace TestingTestShepNz
             Driver.Quit();
         }
 
-        private async Task RunInput(string number1,
-            string number2,
-            string buildVersion,
-            string operation,
-            bool checkIntegerOnly,
-            bool willCalculate,
-            bool willClear)
+        private async Task<Output> RunInput(Input input, string buildVersion)
         {
             Driver.Navigate().GoToUrl(_webLink);
             Driver.FindElement(By.Id("selectBuild")).Click();
@@ -59,58 +55,84 @@ namespace TestingTestShepNz
                 dropdown.FindElement(By.XPath($"//option[. = '{buildVersion}']")).Click();
             }
             Driver.FindElement(By.Id("number1Field")).Click();
-            Driver.FindElement(By.Id("number1Field")).SendKeys(number1);
+            Driver.FindElement(By.Id("number1Field")).SendKeys(input.Number1);
             Driver.FindElement(By.Id("number2Field")).Click();
-            Driver.FindElement(By.Id("number2Field")).SendKeys(number2);
+            Driver.FindElement(By.Id("number2Field")).SendKeys(input.Number2);
             Driver.FindElement(By.Id("selectOperationDropdown")).Click();
             {
                 var dropdown = Driver.FindElement(By.Id("selectOperationDropdown"));
-                dropdown.FindElement(By.XPath($"//option[. = '{operation}']")).Click();
+                dropdown.FindElement(By.XPath($"//option[. = '{input.Operation}']")).Click();
             }
-            Driver.FindElement(By.Id("calculateButton")).Click();
-            //await Task.Delay(3000);
-            string text = "";
-            while (text == "")
+            if (input.WillClear)
             {
-                text = Driver.FindElement(By.Id("numberAnswerField")).GetAttribute("value");
+                Driver.FindElement(By.Id("clearButton")).Click();
             }
-            Vars["numberAnswerField"] = text;
-            Driver.FindElement(By.Id("clearButton")).Click();
+
+            if (input.CheckIntegerOnly)
+            {
+                Driver.FindElement(By.Id("integerSelect")).Click();
+            }
+
+            if (input.WillCalculate)
+            {
+                Driver.FindElement(By.Id("calculateButton")).Click();
+            }
+
+            await Task.Delay(500);
+            return new Output()
+            {
+                Number1Field = Driver.FindElement(By.Id("number1Field")).GetAttribute("value"),
+                Number2Field = Driver.FindElement(By.Id("number2Field")).GetAttribute("value"),
+                ResultField = Driver.FindElement(By.Id("numberAnswerField")).GetAttribute("value"),
+                ErrorField = Driver.FindElement(By.Id("errorMsgField")).Text
+            };
         }
 
 
         [Theory]
-        [MemberData(nameof(GetAllEnvironment))]
-        public async Task ValidMultiplyInput(string browserName, string buildVersion)
+        [MemberData(nameof(GetAllEnvironmentAndBuildVersion))]
+        public async Task ValidMultiplyInput(string browserName, string buildVersion, TestCase testCase)
         {
             Driver = WebDriverFactory(browserName);
-            await
-                RunInput("3", "5", buildVersion, "Multiply", false, true, false);
-            Assert.Equal("15", Vars["numberAnswerField"]);
+            var input = testCase.Input;
+            var actualOutput = await
+                RunInput(input, buildVersion);
+            Assert.Equal(testCase.Output, actualOutput);
         }
 
 
+
         // for reusing the test for all browser and build version 
-        public static List<object[]> GetAllEnvironment()
+        public static List<object[]> GetAllEnvironmentAndBuildVersion()
         {
-            var allEnvi = new List<object[]>();
             var browsers = new List<string>
             {
-                "firefox", "chrome", "edge"
+                //"firefox", "chrome", "edge"
+                "firefox","edge","chrome"
             };
 
             var buildVersions = new List<string>
             {
                 //"Prototype", "1", "2", "3", "4", "5", "6", "7", "8", "9"
-                 "8" 
+                "8"
             };
 
-            foreach (var browser in browsers)
-            foreach (var buildVersion in buildVersions)
-                allEnvi.Add(new object[] {browser, buildVersion});
+            var allTestCases = ReadTestCases();
 
 
-            return allEnvi;
+            return (from browser in browsers 
+                    from buildVersion in buildVersions 
+                    from testCase in allTestCases 
+                    select new object[] {browser, buildVersion, testCase})
+                .ToList();
+        }
+        
+        private static List<TestCase> ReadTestCases()
+        {
+            string fileName = "../../../TestCases.json";
+            string jsonString = File.ReadAllText(fileName);
+            var testCases = JsonSerializer.Deserialize<List<TestCase>>(jsonString);
+            return testCases;
         }
     }
 }

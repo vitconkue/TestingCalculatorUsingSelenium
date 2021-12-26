@@ -1,3 +1,755 @@
-{
+[
+  {
+    "Input": {
+      "_comment": "Add 2 number",
+      "Number1": "25",
+      "Number2": "96",
+      "Operation": "Add",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "25",
+      "Number2Field": "96",
+      "ResultField": "121",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Add 2  float number",
+      "Number1": "1.4",
+      "Number2": "1.9",
+      "Operation": "Add",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "1.4",
+      "Number2Field": "1.9",
+      "ResultField": "3.3",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Add 2 float number integer result only",
+      "Number1": "1.4",
+      "Number2": "1.9",
+      "Operation": "Add",
+      "CheckIntegerOnly": true,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "1.4",
+      "Number2Field": "1.9",
+      "ResultField": "3",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Add 2 number",
+      "Number1": "-9",
+      "Number2": "12",
+      "Operation": "Add",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "-9",
+      "Number2Field": "12",
+      "ResultField": "3",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Add 2 number",
+      "Number1": "9",
+      "Number2": "-12",
+      "Operation": "Add",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "9",
+      "Number2Field": "-12",
+      "ResultField": "-3",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Add 2 number",
+      "Number1": "-45",
+      "Number2": "-23",
+      "Operation": "Add",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "-45",
+      "Number2Field": "-23",
+      "ResultField": "-68",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Add 2 number",
+      "Number1": "abc",
+      "Number2": "1",
+      "Operation": "Add",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "abc",
+      "Number2Field": "1",
+      "ResultField": "",
+      "ErrorField": "Number 1 is not a number"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Add 2 number",
+      "Number1": "1",
+      "Number2": "abc",
+      "Operation": "Add",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "1",
+      "Number2Field": "abc",
+      "ResultField": "",
+      "ErrorField": "Number 2 is not a number"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Add 2 number",
+      "Number1": "34",
+      "Number2": "",
+      "Operation": "Add",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "34",
+      "Number2Field": "",
+      "ResultField": "34",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "96",
+      "Number2": "25",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "96",
+      "Number2Field": "25",
+      "ResultField": "71",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "35.5",
+      "Number2": "20.6",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "35.5",
+      "Number2Field": "20.6",
+      "ResultField": "14.9",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "35.5",
+      "Number2": "20.6",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": true,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "35.5",
+      "Number2Field": "20.6",
+      "ResultField": "14",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "-9",
+      "Number2": "12",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "-9",
+      "Number2Field": "12",
+      "ResultField": "-21",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "9",
+      "Number2": "-12",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "9",
+      "Number2Field": "-12",
+      "ResultField": "21",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "-45",
+      "Number2": "-23",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "-45",
+      "Number2Field": "-23",
+      "ResultField": "-22",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "abc",
+      "Number2": "1",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "abc",
+      "Number2Field": "1",
+      "ResultField": "",
+      "ErrorField": "Number 1 is not a number"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "1",
+      "Number2": "abc",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "1",
+      "Number2Field": "abc",
+      "ResultField": "",
+      "ErrorField": "Number 2 is not a number"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "34",
+      "Number2": "",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "34",
+      "Number2Field": "",
+      "ResultField": "34",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Subtract 2 number",
+      "Number1": "",
+      "Number2": "34",
+      "Operation": "Subtract",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "",
+      "Number2Field": "34",
+      "ResultField": "-34",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "96",
+      "Number2": "25",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "96",
+      "Number2Field": "25",
+      "ResultField": "2400",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "96.5",
+      "Number2": "25.7",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "96.5",
+      "Number2Field": "25.7",
+      "ResultField": "2480.05",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "96.5",
+      "Number2": "25.7",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": true,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "96.5",
+      "Number2Field": "25.7",
+      "ResultField": "2480",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "-9",
+      "Number2": "12",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "-9",
+      "Number2Field": "12",
+      "ResultField": "-108",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "9",
+      "Number2": "-13",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "9",
+      "Number2Field": "-13",
+      "ResultField": "-117",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "-45",
+      "Number2": "-23",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "-45",
+      "Number2Field": "-23",
+      "ResultField": "1035",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "0",
+      "Number2": "20",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "0",
+      "Number2Field": "20",
+      "ResultField": "0",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "-99",
+      "Number2": "0",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "-99",
+      "Number2Field": "0",
+      "ResultField": "0",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "abc",
+      "Number2": "1",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "abc",
+      "Number2Field": "1",
+      "ResultField": "",
+      "ErrorField": "Number 1 is not a number"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Multiply 2 number",
+      "Number1": "1",
+      "Number2": "abc",
+      "Operation": "Multiply",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "1",
+      "Number2Field": "abc",
+      "ResultField": "",
+      "ErrorField": "Number 2 is not a number"
+    }
+  },
 
-}
+
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "288",
+      "Number2": "8",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "288",
+      "Number2Field": "8",
+      "ResultField": "36",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "34.5",
+      "Number2": "17.9",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "34.5",
+      "Number2Field": "17.9",
+      "ResultField": "1.92737430167598",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "79.6",
+      "Number2": "8.4",
+      "Operation": "Divide",
+      "CheckIntegerOnly": true,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "79.6",
+      "Number2Field": "8.4",
+      "ResultField": "9",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "-24.5",
+      "Number2": "2.5",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "-24.5",
+      "Number2Field": "2.5",
+      "ResultField": "-9.8",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "24.5",
+      "Number2": "-2.5",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "24.5",
+      "Number2Field": "-2.5",
+      "ResultField": "-9.8",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "0",
+      "Number2": "20",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "0",
+      "Number2Field": "20",
+      "ResultField": "0",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "20",
+      "Number2": "0",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "20",
+      "Number2Field": "0",
+      "ResultField": "",
+      "ErrorField": "Divide by zero error!"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "20",
+      "Number2": "",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "20",
+      "Number2Field": "",
+      "ResultField": "",
+      "ErrorField": "Divide by zero error!"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "abc",
+      "Number2": "1",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "abc",
+      "Number2Field": "1",
+      "ResultField": "",
+      "ErrorField": "Number 1 is not a number"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Divide 2 number",
+      "Number1": "1",
+      "Number2": "abc",
+      "Operation": "Divide",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "1",
+      "Number2Field": "abc",
+      "ResultField": "",
+      "ErrorField": "Number 2 is not a number"
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Concatenate 2 element",
+      "Number1": "abc",
+      "Number2": "def",
+      "Operation": "Concatenate",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "abc",
+      "Number2Field": "def",
+      "ResultField": "abcdef",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Concatenate 2 element",
+      "Number1": "abc",
+      "Number2": "1.2",
+      "Operation": "Concatenate",
+      "CheckIntegerOnly": true,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "abc",
+      "Number2Field": "1.2",
+      "ResultField": "abc1.2",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Concatenate 2 element",
+      "Number1": "",
+      "Number2": "def",
+      "Operation": "Concatenate",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "",
+      "Number2Field": "def",
+      "ResultField": "def",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Concatenate 2 element",
+      "Number1": "",
+      "Number2": "",
+      "Operation": "Concatenate",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "",
+      "Number2Field": "",
+      "ResultField": "",
+      "ErrorField": ""
+    }
+  },
+  {
+    "Input": {
+      "_comment": "Concatenate 2 element",
+      "Number1": "",
+      "Number2": "bbbbb",
+      "Operation": "Concatenate",
+      "CheckIntegerOnly": false,
+      "WillCalculate": true,
+      "WillClear": false
+    },
+    "Output": {
+      "Number1Field": "",
+      "Number2Field": "",
+      "ResultField": "bbbbb",
+      "ErrorField": ""
+    }
+  }
+
+
+r
+
